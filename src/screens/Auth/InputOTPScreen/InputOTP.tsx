@@ -1,21 +1,23 @@
 import { ImageBackground, StyleSheet, View, Image, TouchableOpacity, ToastAndroid } from 'react-native'
 import React, { useState, useContext } from 'react'
-import { images } from '../../../../asset/image'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { colors, displaySize } from '../../../resource'
-import { fonts } from '../../../../asset'
-import { AquafinaButton, CustomText, Header, RegularText } from '../../../component'
+import { images,fonts } from '@assets'
+import { colors, displaySize } from '@utils'
+import { AquafinaButton, CustomText, Header, RegularText } from '@components'
 import LinearGradient from 'react-native-linear-gradient'
 import OTPInputView from '@twotalltotems/react-native-otp-input'
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { RootAuthParamLists } from '../../../navigation'
-import { AppContext } from '../../../navigation'
+import { RootAuthParamLists, AppContext } from '@navigation'
 
 type InputOTPProps = NativeStackScreenProps<RootAuthParamLists, 'InputOTP'>
 
 const _inputOTP: React.FC<InputOTPProps> = (props) => {
     const { isLogin, setisLogin } = useContext(AppContext);
     const { navigation, route } = props;
+
+    const handleNavgateHome = () => {
+        navigation.navigate('Main');
+    }
     const phoneNumber = route.params?.phoneNumber;
     const type = route.params?.type;
 
@@ -35,7 +37,6 @@ const _inputOTP: React.FC<InputOTPProps> = (props) => {
     const codeOTP = "9999";
     const [code, setCode] = useState<string>("");
     const handleCheckOTP = () => {
-
         if (code != codeOTP) {
             setDisplay("none");
             setColorOTP(colors.red_light);
@@ -44,6 +45,7 @@ const _inputOTP: React.FC<InputOTPProps> = (props) => {
         } else {
             if (type) {
                 setisLogin(true)
+                handleNavgateHome()
             } else {
                 navigation.navigate('Success');
             }
@@ -66,7 +68,7 @@ const _inputOTP: React.FC<InputOTPProps> = (props) => {
 
     const _renderHeader = () => {
         return (
-            <Header iconExtend={images.icon_home} iconLogo={images.logo_app} iconLogout={images.transparent} />
+            <Header iconExtend={images.icon_home} iconLogo={images.logo_app} iconStatus={images.transparent} onPressExtend={handleNavgateHome}/>
         )
     }
     const _renderBody = () => {

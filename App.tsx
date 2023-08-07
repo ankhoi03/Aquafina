@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import { AppContextProvider, RootNavigation } from './src/presentation';
+import { AppContextProvider, RootNavigation } from '@navigation';
 
 
 

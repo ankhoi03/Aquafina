@@ -1,10 +1,9 @@
 import { ImageBackground, StyleSheet, View, Image } from 'react-native'
 import React, { useState } from 'react'
-import { images } from '../../../../asset/image'
+import { images, fonts } from '@assets'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { colors, displaySize } from '../../../resource'
-import { fonts } from '../../../../asset'
-import { AquafinaButton, Header, RegularText, AquafinaInput } from '../../../component'
+import { colors, displaySize } from '@utils'
+import { AquafinaButton, Header, RegularText, AquafinaInput } from '@components'
 import LinearGradient from 'react-native-linear-gradient'
 import { RootAuthParamLists } from '../../../navigation'
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
@@ -64,7 +63,7 @@ const _Register: React.FC<RegisterProps> = (props) => {
 
     const _renderHeader = () => {
         return (
-            <Header iconExtend={images.icon_home} iconLogo={images.logo_app} iconLogout={images.transparent} />
+            <Header iconExtend={images.icon_home} iconLogo={images.logo_app} iconStatus={images.transparent} />
         )
     }
 

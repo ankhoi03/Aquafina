@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, StyleProp, TextStyle } from 'react-native'
 import React from 'react'
-import { fonts } from '../../../asset'
-import { colors } from '../../resource'
+import { fonts } from '@assets'
+import { colors } from '@utils'
 
 
 interface RegularTextProps {

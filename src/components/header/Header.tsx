@@ -1,16 +1,16 @@
 import { Dimensions, Image, ImageStyle, StyleProp, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
-import { displaySize } from '../../resource'
+import { displaySize } from '@utils'
 
 
 
 export interface HeaderProps {
     iconExtend: string
     iconLogo: string
-    iconLogout?: string
+    iconStatus?: string
     onPressExtend?: () => void
     onPressLogo?: () => void
-    onPressLogout?: () => void
+    onPressStatus?: () => void
 }
 
 const _Header: React.FC<HeaderProps> = (props) => {
@@ -25,8 +25,8 @@ const _Header: React.FC<HeaderProps> = (props) => {
                 <Image style={styles.logo} source={{ uri: props.iconLogo }} />
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={props.onPressLogout}>
-                <Image style={styles.icon} source={{ uri: props?.iconLogout }} />
+            <TouchableOpacity onPress={props.onPressStatus}>
+                <Image style={styles.icon} source={{ uri: props?.iconStatus }} />
             </TouchableOpacity>
 
         </View>

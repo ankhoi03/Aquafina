@@ -1,7 +1,7 @@
 import { StyleSheet, StyleProp, TextStyle, Text, View, TextInput, ViewStyle, TextProps } from 'react-native'
 import React, { FC } from 'react'
-import { fonts } from '../../../asset'
-import { colors } from '../../resource'
+import { fonts } from '@assets'
+import { colors } from '@utils'
 
 export interface AquafinaInputProps {
   name: string

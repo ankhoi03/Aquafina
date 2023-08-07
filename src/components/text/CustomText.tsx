@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, StyleSheet,StyleProp, TextStyle } from 'react-native';
-import { fonts } from '../../../asset';
+import { fonts } from '@assets';
 
 interface CustomTextProps {
     style?: StyleProp<TextStyle>

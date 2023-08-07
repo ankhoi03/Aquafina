@@ -14,7 +14,11 @@ export const images = {
     background_bottom: 'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_image%2Fbackground_bottom.png?alt=media&token=1cea349c-4fc1-41ca-97e2-c18250bd17ab',
 
     transparent: 'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_image%2Ftransparent.png?alt=media&token=0899cb94-4305-4ff9-a32f-ea490f851357',
-    
 
+    icon_extend: 'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_image%2Fic_extend.png?alt=media&token=f6437115-729d-44e2-94e7-0c8298dc5c43',
+    
+    icon_login: 'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_image%2Fic_login.png?alt=media&token=6b6e03cc-8c56-4096-9026-42ae45c6cb1e',
+
+    icon_logout: 'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_image%2Fic_logout.png?alt=media&token=f9c061d7-9474-46d7-a09f-0f260703978b',
   } 
   
