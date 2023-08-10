@@ -3,7 +3,6 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import { InputOTP, Login, Home, Register, Success } from '@screens';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { AppContext } from './';
 
 
 export type RootAuthParamLists = {
@@ -56,7 +55,7 @@ const MainNavigation: React.FC = () => {
 }
 
 const _RootNavigation: React.FC = () => {
-  const { isLogin } = useContext(AppContext);
+  
   return (
     <NavigationContainer >
         <MainNavigation/>

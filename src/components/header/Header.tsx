@@ -1,35 +1,45 @@
 import { Dimensions, Image, ImageStyle, StyleProp, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React from 'react'
+import React, { useContext } from 'react'
 import { displaySize } from '@utils'
-
-
+import { AppContext, RootAuthParamLists, RootMainParamLists } from '@navigation'
+import { images } from '@assets'
+import { NativeStackScreenProps } from '@react-navigation/native-stack'
 
 export interface HeaderProps {
-    iconExtend: string
-    iconLogo: string
-    iconStatus?: string
+    onPressLogin?: () => void
     onPressExtend?: () => void
-    onPressLogo?: () => void
-    onPressStatus?: () => void
 }
 
 const _Header: React.FC<HeaderProps> = (props) => {
+    const { loginStatus, setLoginStatus } = useContext(AppContext);
+
+    const handleLogout = () =>{
+        setLoginStatus(false)
+    }
+    
+
     return (
         <View style={styles.header}>
 
-            <TouchableOpacity onPress={props.onPressExtend}>
-                <Image style={styles.icon} source={{ uri: props.iconExtend }} />
+            <TouchableOpacity onPress={props?.onPressExtend}>
+                <Image style={styles.icon} source={{ uri: images.icon_extend }} />
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={props.onPressLogo}>
-                <Image style={styles.logo} source={{ uri: props.iconLogo }} />
-            </TouchableOpacity>
 
-            <TouchableOpacity onPress={props.onPressStatus}>
-                <Image style={styles.icon} source={{ uri: props?.iconStatus }} />
-            </TouchableOpacity>
+            <Image style={styles.logo} source={{ uri: images.logo_app }} />
 
-        </View>
+            {loginStatus ? (
+                <TouchableOpacity onPress={handleLogout}>
+                    <Image style={styles.icon} source={{ uri: images.icon_logout }} />
+                </TouchableOpacity>
+            ) : (
+                <TouchableOpacity onPress={props?.onPressLogin}>
+                    <Image style={styles.icon} source={{ uri: images.icon_login }} />
+                </TouchableOpacity>
+            )
+            }
+
+        </View >
     )
 }
 

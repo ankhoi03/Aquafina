@@ -8,7 +8,7 @@ const footerLogin = windowHeight * 0.4;
 export const displaySize = {
     width: windowWidth,
     height: windowHeight,
-    header: 48,
+    header: 54,
     body_login: bodyLogin,
     footer_login: footerLogin,
   };

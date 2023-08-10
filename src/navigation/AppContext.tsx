@@ -1,13 +1,13 @@
 import React, { createContext, useState } from "react";
 
 interface AppContextValue {
-  isLogin: boolean;
-  setisLogin: React.Dispatch<React.SetStateAction<boolean>>;
+  loginStatus: boolean;
+  setLoginStatus: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const defaultContextValue: AppContextValue = {
-  isLogin: false,
-  setisLogin: () => {},
+  loginStatus: false,
+  setLoginStatus: () => {},
 };
 
 export const AppContext = createContext<AppContextValue>(defaultContextValue);
@@ -17,11 +17,11 @@ interface AppContextProviderProps {
 }
 
 export const AppContextProvider: React.FC<AppContextProviderProps> = ({ children }) => {
-  const [isLogin, setisLogin] = useState(false);
+  const [loginStatus, setLoginStatus] = useState(false);
 
   const contextValue: AppContextValue = {
-    isLogin,
-    setisLogin,
+    loginStatus,
+    setLoginStatus,
   };
 
   return (

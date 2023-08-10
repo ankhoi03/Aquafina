@@ -3,7 +3,7 @@ import React, { useState, useContext } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { images,fonts } from '@assets'
 import { colors, displaySize } from '@utils'
-import { AquafinaButton, CustomText, Header, RegularText } from '@components'
+import { AquafinaButton, CustomText, Header, LoginHeader, RegularText } from '@components'
 import LinearGradient from 'react-native-linear-gradient'
 import OTPInputView from '@twotalltotems/react-native-otp-input'
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
@@ -12,7 +12,7 @@ import { RootAuthParamLists, AppContext } from '@navigation'
 type InputOTPProps = NativeStackScreenProps<RootAuthParamLists, 'InputOTP'>
 
 const _inputOTP: React.FC<InputOTPProps> = (props) => {
-    const { isLogin, setisLogin } = useContext(AppContext);
+    const { loginStatus, setLoginStatus } = useContext(AppContext);
     const { navigation, route } = props;
 
     const handleNavgateHome = () => {
@@ -44,7 +44,7 @@ const _inputOTP: React.FC<InputOTPProps> = (props) => {
             return false;
         } else {
             if (type) {
-                setisLogin(true)
+                setLoginStatus(true)
                 handleNavgateHome()
             } else {
                 navigation.navigate('Success');
@@ -68,7 +68,7 @@ const _inputOTP: React.FC<InputOTPProps> = (props) => {
 
     const _renderHeader = () => {
         return (
-            <Header iconExtend={images.icon_home} iconLogo={images.logo_app} iconStatus={images.transparent} onPressExtend={handleNavgateHome}/>
+          <LoginHeader/>
         )
     }
     const _renderBody = () => {

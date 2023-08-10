@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { images, fonts } from '@assets'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { colors, displaySize } from '@utils'
-import { AquafinaButton, Header, RegularText, AquafinaInput } from '@components'
+import { AquafinaButton, Header, RegularText, AquafinaInput, LoginHeader } from '@components'
 import LinearGradient from 'react-native-linear-gradient'
 import { RootAuthParamLists } from '@navigation'
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
@@ -48,7 +48,7 @@ const _Login: React.FC<LoginProps> = (props) => {
 
     const _renderHeader = () => {
         return (
-            <Header iconExtend={images.icon_home} iconLogo={images.logo_app} iconStatus={images.transparent} onPressExtend={handleNavgateHome}/>
+           <LoginHeader/>
         )
     }
 
