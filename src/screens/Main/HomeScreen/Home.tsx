@@ -30,7 +30,7 @@ const _Home: React.FC<HomeProps> = (props) => {
       <ScrollView>
         <AquafinaSwiper/>
         
-        <AquafinaRanked/>
+        <AquafinaRanked onPressLogin={handleNavgateLogin}/>
 
       </ScrollView>
     )

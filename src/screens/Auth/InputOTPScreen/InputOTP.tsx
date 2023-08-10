@@ -83,7 +83,6 @@ const _inputOTP: React.FC<InputOTPProps> = (props) => {
                     <OTPInputView
                         style={{ width: '56%', height: 50 }}
                         pinCount={4}
-                        autoFocusOnLoad
                         codeInputFieldStyle={StyleSheet.flatten([
                             styles.otpStyleBase,
                             { color: colorOTP, borderColor: borderColorOTP },

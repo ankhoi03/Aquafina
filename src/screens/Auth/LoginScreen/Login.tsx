@@ -1,4 +1,4 @@
-import { ImageBackground, StyleSheet, View, Image } from 'react-native'
+import { ImageBackground, StyleSheet, View, Image, ToastAndroid } from 'react-native'
 import React, { useState } from 'react'
 import { images, fonts } from '@assets'
 import { SafeAreaView } from 'react-native-safe-area-context'
@@ -35,7 +35,13 @@ const _Login: React.FC<LoginProps> = (props) => {
         }
     }
     const handleNavgateInputOTP = () => {
-        navigation.navigate('InputOTP', { phoneNumber: phone, type: true });
+        if (phone == '') {
+            ToastAndroid.show('Vui lòng nhập số điện thoại', ToastAndroid.SHORT)
+        }
+        else {
+            navigation.navigate('InputOTP', { phoneNumber: phone, type: true });
+        }
+
     }
 
     const handleNavgateRegister = () => {
@@ -48,7 +54,7 @@ const _Login: React.FC<LoginProps> = (props) => {
 
     const _renderHeader = () => {
         return (
-           <LoginHeader/>
+            <LoginHeader />
         )
     }
 
@@ -72,7 +78,7 @@ const _Login: React.FC<LoginProps> = (props) => {
 
                     <RegularText content='Hoặc' style={styles.orText} />
 
-                    <AquafinaButton content='Đăng ký' source={images.white_button} buttonStyle={styles.button} textStyle={styles.whiteContent} onPress={handleNavgateRegister}/>
+                    <AquafinaButton content='Đăng ký' source={images.white_button} buttonStyle={styles.button} textStyle={styles.whiteContent} onPress={handleNavgateRegister} />
                 </LinearGradient>
 
             </ImageBackground>

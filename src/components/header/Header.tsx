@@ -1,7 +1,7 @@
 import { Dimensions, Image, ImageStyle, StyleProp, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React, { useContext } from 'react'
-import { displaySize } from '@utils'
-import { AppContext, RootAuthParamLists, RootMainParamLists } from '@navigation'
+import { colors, displaySize } from '@utils'
+import { AppContext } from '@navigation'
 import { images } from '@assets'
 import { NativeStackScreenProps } from '@react-navigation/native-stack'
 
@@ -52,7 +52,8 @@ const styles = StyleSheet.create({
         height: displaySize.header,
         width: displaySize.width,
         justifyContent: 'space-between',
-        alignItems: 'center'
+        alignItems: 'center',
+        backgroundColor:colors.white
     },
     icon: {
         width: 28,

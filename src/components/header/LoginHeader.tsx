@@ -1,6 +1,6 @@
 import { Dimensions, Image, ImageStyle, StyleProp, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
-import { displaySize } from '@utils'
+import { colors, displaySize } from '@utils'
 import { images } from '@assets'
 
 
@@ -10,11 +10,7 @@ import { images } from '@assets'
 const _LoginHeader: React.FC = () => {
     return (
         <View style={styles.header}>
-
-            <TouchableOpacity >
                 <Image style={styles.logo} source={{ uri: images.logo_app }} />
-            </TouchableOpacity>
-
         </View>
     )
 }
@@ -28,7 +24,8 @@ const styles = StyleSheet.create({
         height: displaySize.header,
         width: displaySize.width,
         justifyContent:'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        backgroundColor:colors.white
     },
     logo: {
         width: 84,
