@@ -2,9 +2,9 @@ import { Image, ImageBackground, StyleSheet, Text, View } from 'react-native'
 import React, { useContext } from 'react'
 import { colors, displaySize } from '@utils';
 import { fonts, images } from '@assets';
-import { RegularText } from '@components/text';
+import { RegularText,AquafinaButton } from '@components';
 import { AppContext } from '@navigation'
-import { AquafinaButton } from '@components/button';
+
 
 
 export interface RankedProps {
@@ -241,7 +241,7 @@ const styles = StyleSheet.create({
   },
   typeOfBottle: {
     fontFamily: fonts.svn_bold,
-    fontSize: 13,
+    fontSize: 12,
     color: colors.blue_light
   },
   dateStyle: {

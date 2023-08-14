@@ -3,7 +3,7 @@ import React from 'react'
 import Swiper from "react-native-swiper";
 import { colors, displaySize } from '@utils';
 import { images } from '@assets';
-import { AquafinaButton } from '@components/button';
+import { AquafinaButton } from '@components';
 
 
 const _AquafinaSwiper = () => {

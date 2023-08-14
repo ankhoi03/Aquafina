@@ -83,6 +83,8 @@ const _inputOTP: React.FC<InputOTPProps> = (props) => {
                     <OTPInputView
                         style={{ width: '56%', height: 50 }}
                         pinCount={4}
+                        autoFocusOnLoad={false}
+                        keyboardType={'phone-pad'}
                         codeInputFieldStyle={StyleSheet.flatten([
                             styles.otpStyleBase,
                             { color: colorOTP, borderColor: borderColorOTP },
@@ -95,7 +97,7 @@ const _inputOTP: React.FC<InputOTPProps> = (props) => {
                             console.log(`Code is ${code}, you are good to go!`);
                             setCode(code);
                         }}
-                        editable={true}
+                        
                     />
                 </View>
             </View>

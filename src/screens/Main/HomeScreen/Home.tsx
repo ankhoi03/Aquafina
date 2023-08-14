@@ -1,16 +1,12 @@
 import { ImageBackground, StyleSheet, Text, View, ScrollView } from 'react-native'
 import React, { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { fonts, images } from '@assets'
-import { colors } from '@utils'
 import { AquafinaRanked, AquafinaSwiper, Header } from '@components'
 import { NativeStackScreenProps } from '@react-navigation/native-stack'
 import { RootMainParamLists } from '@navigation'
+import { DrawerActions } from '@react-navigation/native';
 
-
-
-type HomeProps = NativeStackScreenProps<RootMainParamLists, 'Home'>;
-
+type HomeProps=NativeStackScreenProps<RootMainParamLists>
 const _Home: React.FC<HomeProps> = (props) => {
 
   const { navigation } = props;
@@ -18,10 +14,12 @@ const _Home: React.FC<HomeProps> = (props) => {
   const handleNavgateLogin = () => {
     navigation.navigate('Auth');
   }
-
+  const handleOpenDrawer = () => {
+    navigation.dispatch(DrawerActions.openDrawer());
+  }
   const _renderHeader = () => {
     return (
-      <Header onPressLogin={handleNavgateLogin}/>
+      <Header onPressLogin={handleNavgateLogin} onPressExtend={handleOpenDrawer}/>
     )
   }
 

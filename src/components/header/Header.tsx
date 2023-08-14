@@ -3,7 +3,6 @@ import React, { useContext } from 'react'
 import { colors, displaySize } from '@utils'
 import { AppContext } from '@navigation'
 import { images } from '@assets'
-import { NativeStackScreenProps } from '@react-navigation/native-stack'
 
 export interface HeaderProps {
     onPressLogin?: () => void
