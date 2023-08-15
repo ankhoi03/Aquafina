@@ -3,6 +3,7 @@ export const colors = {
   blue_dark: '#1545A5',
   blue_outline: '#CCDAF1',
   blue_300: '#6691D6',
+  blue_400: '#336CC8',
   blue_border: '#99B5E3',
   grey_light: '#AEB1B5',
   grey_dark: '#707172',

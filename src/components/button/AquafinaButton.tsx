@@ -16,8 +16,7 @@ const _AquafinaButton: React.FC<AquafinaButtonProps> = (props) => {
     return (
         <TouchableOpacity onPress={props.onPress} style={StyleSheet.flatten([styles.container, props.buttonStyle])}>
             <Image source={{ uri: props.source }} style={styles.backGround}/>
-            <Text style={StyleSheet.flatten([styles.contentStyle, props.textStyle])}>
-                {props.content} </Text>
+            <Text style={StyleSheet.flatten([styles.contentStyle, props.textStyle])}>{props.content}</Text>
         </TouchableOpacity>
     )
 }

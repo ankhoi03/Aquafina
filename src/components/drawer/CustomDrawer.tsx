@@ -21,6 +21,9 @@ const _CustomDrawer: React.FC<DrawerContentComponentProps> = (props) => {
   const handleLogin = () => {
     navigation.navigate('Auth');
   }
+  const handleBackHome = () => {
+    navigation.navigate('Trang Chủ');
+  }
 
 
   return (
@@ -29,7 +32,9 @@ const _CustomDrawer: React.FC<DrawerContentComponentProps> = (props) => {
         <TouchableOpacity onPress={handleCloseDrawer}>
           <Image source={{ uri: images.ic_x }} style={styles.icon} />
         </TouchableOpacity>
-        <Image style={styles.logo} source={{ uri: images.logo_app }} />
+        <TouchableOpacity onPress={handleBackHome}>
+          <Image style={styles.logo} source={{ uri: images.logo_app }} />
+        </TouchableOpacity>
         <Image source={{ uri: images.transparent }} style={styles.icon} />
       </View>
 

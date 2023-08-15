@@ -61,27 +61,69 @@ export const images = {
 
   khoita: 'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_image%2Fkhoita.jpg?alt=media&token=777b40bd-af0e-439f-8735-cccf5d7c30a1',
 
-  ic_gift_active:'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_image%2Fic_gift_active.png?alt=media&token=bdf4f744-5dfd-4799-8d2f-c3f0e4e3d344',
+  ic_gift_active: 'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_image%2Fic_gift_active.png?alt=media&token=bdf4f744-5dfd-4799-8d2f-c3f0e4e3d344',
 
-  ic_gift_inactive:'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_image%2Fic_gift_inactive.png?alt=media&token=66a35acb-d634-419a-bbb5-4764a22baa1c',
+  ic_gift_inactive: 'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_image%2Fic_gift_inactive.png?alt=media&token=66a35acb-d634-419a-bbb5-4764a22baa1c',
 
-  ic_map_active:'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_image%2Fic_map_active.png?alt=media&token=37014a90-c70f-4949-92ed-04c8ed63e185',
-  
-  ic_map_inactive:'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_image%2Fic_map_inactive.png?alt=media&token=afdfcee2-1572-4b81-9ced-6ebbc7e2a9d3',
-  
-  ic_rank_active:'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_image%2Fic_rank_active.png?alt=media&token=9f4c15ee-aa79-4869-af8e-561d1c3fd9e4',
-  
-  ic_rank_inactive:'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_image%2Fic_rank_inactive.png?alt=media&token=7cd22004-ef3b-4249-9ff2-6356e2faf6c5',
-  
-  ic_point_active:'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_image%2Fic_point_active.png?alt=media&token=37c4f120-abbb-45d0-90cd-a422b12672b7',
-  
-  ic_point_inactive:'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_image%2Fic_point_inactive.png?alt=media&token=7d8f06bc-dfaf-459f-8cdd-69f2245758fc',
-  
-  ic_world_active:'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_image%2Fic_world_active.png?alt=media&token=e8a284f1-f65e-4f2f-8c77-3863df3168ef',
-  
-  ic_world_inactive:'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_image%2Fic_world_inactive.png?alt=media&token=87b355fa-00ba-4a2b-9e30-e316dfeb7eeb',
-  
-  ic_x:'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_image%2Fic_x.png?alt=media&token=36d9d53f-81be-4cff-bded-95cfba6f24c0',
+  ic_map_active: 'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_image%2Fic_map_active.png?alt=media&token=37014a90-c70f-4949-92ed-04c8ed63e185',
 
-  ic_user:'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_image%2Fic_user.png?alt=media&token=67eaaa4a-9217-41f5-8a38-1b0e4870a700',
+  ic_map_inactive: 'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_image%2Fic_map_inactive.png?alt=media&token=afdfcee2-1572-4b81-9ced-6ebbc7e2a9d3',
+
+  ic_rank_active: 'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_image%2Fic_rank_active.png?alt=media&token=9f4c15ee-aa79-4869-af8e-561d1c3fd9e4',
+
+  ic_rank_inactive: 'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_image%2Fic_rank_inactive.png?alt=media&token=7cd22004-ef3b-4249-9ff2-6356e2faf6c5',
+
+  ic_point_active: 'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_image%2Fic_point_active.png?alt=media&token=37c4f120-abbb-45d0-90cd-a422b12672b7',
+
+  ic_point_inactive: 'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_image%2Fic_point_inactive.png?alt=media&token=7d8f06bc-dfaf-459f-8cdd-69f2245758fc',
+
+  ic_world_active: 'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_image%2Fic_world_active.png?alt=media&token=e8a284f1-f65e-4f2f-8c77-3863df3168ef',
+
+  ic_world_inactive: 'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_image%2Fic_world_inactive.png?alt=media&token=87b355fa-00ba-4a2b-9e30-e316dfeb7eeb',
+
+  ic_x: 'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_image%2Fic_x.png?alt=media&token=36d9d53f-81be-4cff-bded-95cfba6f24c0',
+
+  ic_user: 'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_image%2Fic_user.png?alt=media&token=67eaaa4a-9217-41f5-8a38-1b0e4870a700',
+
+  aqf_gift_non: 'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_gift%2FAQF-NonOffwhite.png?alt=media&token=41422863-8fad-4111-914a-4be5232abbb4',
+
+  aqf_gift_vo: 'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_gift%2FAQF-Sock.png?alt=media&token=c45185e8-9e12-41dc-b44d-2b449f378e0b',
+
+  aqf_gift_aothun_den: 'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_gift%2FAQF-Aothun-B.png?alt=media&token=94fb14d3-ff1a-4f4b-b7e1-04fb262cb3f8',
+
+  aqf_gift_aothun_trang: 'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_gift%2FAQF-Aothun-W.png?alt=media&token=eed7bc45-309b-4d6e-85fa-941e4c2d5ced',
+
+  aqf_gift_tui: 'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_gift%2FAQF-TuiTote.png?alt=media&token=c861bae7-a186-4c9e-b77e-edf606c43dea',
+
+  aqf_non_price_inactive: 'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_gift%2FAQF-Non-price-inactive.png?alt=media&token=55e1401d-0c71-45f2-8459-594046db7bd1',
+
+  aqf_non_price_active: 'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_gift%2FAQF-Non-price-active.png?alt=media&token=fd6b178e-414e-4175-9a93-a7b334fe1264',
+
+  aqf_vo_price_inactive: 'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_gift%2FAQF-Vo-price-inactive.png?alt=media&token=124c3139-e177-44f2-b558-8e9ca91de39b',
+
+  aqf_vo_price_active: 'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_gift%2FAQF-Vo-price-active.png?alt=media&token=d2893b11-5377-4c3f-885f-a6cf4b4ce82f',
+
+  aqf_aothun_price_inactive: 'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_gift%2FAQF-Aothun-price-inactive.png?alt=media&token=a828d2c3-d38e-4e0d-957f-62aa14a75e2a',
+
+  aqf_aothun_price_active: 'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_gift%2FAQF-Aothun-price-active.png?alt=media&token=6208af6d-0187-4395-b752-c893152ea1d1',
+
+  aqf_tui_price_inactive: 'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_gift%2FAQF-Tui-price-inactive.png?alt=media&token=2b9cb844-687f-47d7-bd00-2b04c878cece',
+
+  aqf_tui_price_active: 'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_gift%2FAQF-Tui-price-active.png?alt=media&token=28887e23-5667-4f21-a788-abbc13c25236',
+
+  pure_gift_bg: 'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_gift%2FPure_gift.png?alt=media&token=01ba9f5f-592e-487d-b93a-94d596fcec08',
+
+  frame_gift_active: 'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_gift%2FFrame_gift_active.png?alt=media&token=a56f8be2-d853-4c2d-b8b2-f89bce71edf5',
+
+  frame_dialog: 'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_gift%2Fdialog_frame.png?alt=media&token=49c08283-e64a-4e7c-9610-b7689843ee8e',
+
+  pure_map_bg: 'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_image%2Fbackground_pure_map.jpg?alt=media&token=25ed9ef8-929b-43cd-a710-2f8af8ae9c89',
+
+  ic_facebook: 'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_image%2Fic_facebook.png?alt=media&token=75750198-8a78-4819-bccf-6182af3c8013',
+
+  ic_youtube: 'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_image%2Fic_youtube.png?alt=media&token=b4232338-4a64-4935-88c1-f536713b16c0',
+
+  ic_error: 'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_image%2Fic_error.png?alt=media&token=734cf088-e568-4aaa-92d6-001ab8705701',
+
+
 }

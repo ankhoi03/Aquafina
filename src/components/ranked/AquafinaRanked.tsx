@@ -2,15 +2,19 @@ import { Image, ImageBackground, StyleSheet, Text, View } from 'react-native'
 import React, { useContext } from 'react'
 import { colors, displaySize } from '@utils';
 import { fonts, images } from '@assets';
-import { RegularText,AquafinaButton } from '@components';
+import { RegularText, AquafinaButton } from '@components';
 import { AppContext } from '@navigation'
 
 
 
-export interface RankedProps {
-  onPressLogin?: () => void
+interface RankedProps {
+  navigateToLogin?: () => void
+  navigateToRankedScreen?: () => void
 }
 const _AquafinaRanked: React.FC<RankedProps> = (props) => {
+
+  const { navigateToRankedScreen, navigateToLogin } = props
+
   const aquafinaBottles = 200000
   const anotherBottles = 100000
   const { loginStatus } = useContext(AppContext);
@@ -24,13 +28,13 @@ const _AquafinaRanked: React.FC<RankedProps> = (props) => {
     score: number
   }
 
-  const CurrentUser:User = {
+  const CurrentUser: User = {
     index: 15,
-    avatar : images.khoita,
-    name : 'To An Khoi',
+    avatar: images.khoita,
+    name: 'To An Khoi',
     score: 256
   }
-  
+
   const TopUser: User[] = [
     {
       index: 1,
@@ -106,7 +110,7 @@ const _AquafinaRanked: React.FC<RankedProps> = (props) => {
           </View>
         ) : (
           <View style={[styles.topUserItem, { backgroundColor }]}>
-            <View style={[styles.infoUserView,{width:'80%'}]}>
+            <View style={[styles.infoUserView, { width: '80%' }]}>
               <RegularText content={'#' + item.index} style={[styles.score, { width: 30 }]} />
               <Image source={{ uri: item?.avatar }} style={styles.avatarImage} />
               <RegularText content={item?.name} style={styles.name} />
@@ -157,7 +161,7 @@ const _AquafinaRanked: React.FC<RankedProps> = (props) => {
             <RegularText content='Hạng của tôi' style={styles.titile} />
             <View style={styles.currentUserItem}>
               <View style={styles.infoUserView}>
-                <RegularText content={'#'+CurrentUser.index} style={[styles.score, { color: colors.white, width: 30 }]} />
+                <RegularText content={'#' + CurrentUser.index} style={[styles.score, { color: colors.white, width: 30 }]} />
                 <Image source={{ uri: CurrentUser.avatar }} style={styles.avatarImage} />
                 <RegularText content={CurrentUser.name} style={[styles.name, { color: colors.white }]} />
               </View>
@@ -166,12 +170,12 @@ const _AquafinaRanked: React.FC<RankedProps> = (props) => {
               </View>
             </View>
 
-            <AquafinaButton content='Xem chi tiết' source={images.white_button} buttonStyle={styles.button} textStyle={styles.whiteContent} />
+            <AquafinaButton content='Xem chi tiết' source={images.white_button} buttonStyle={styles.button} textStyle={styles.whiteContent} onPress={navigateToRankedScreen}/>
           </View>
         ) : (
           <View style={styles.footerNonLogin}>
             <RegularText content='Vui lòng đăng nhập để xem hạng của bạn' style={styles.titile} />
-            <AquafinaButton content='Đăng nhập' source={images.white_button} buttonStyle={styles.button} textStyle={styles.whiteContent} onPress={props.onPressLogin} />
+            <AquafinaButton content='Đăng nhập' source={images.white_button} buttonStyle={styles.button} textStyle={styles.whiteContent} onPress={navigateToLogin} />
           </View>
         )}
 

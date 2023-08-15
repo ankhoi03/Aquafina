@@ -4,7 +4,7 @@ import React from 'react'
 const _PointScreen = () => {
   return (
     <View>
-      <Text>WorldScreen</Text>
+      <Text>PointScreen</Text>
     </View>
   )
 }

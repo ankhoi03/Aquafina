@@ -5,4 +5,6 @@ export * from './input'
 export * from './swiper'
 export * from './ranked'
 export * from './drawer'
-
+export * from './pure_gift'
+export * from './pure_map'
+export * from './footer'
