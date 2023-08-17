@@ -1,5 +1,5 @@
-import { ImageBackground, StyleSheet, Text, View, ScrollView } from 'react-native'
-import React, { useState } from 'react'
+import {  StyleSheet, ScrollView } from 'react-native'
+import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { AquafinaRanked, AquafinaSwiper, Footer, Header, PureGift, PureMap } from '@components'
 import { NativeStackScreenProps } from '@react-navigation/native-stack'

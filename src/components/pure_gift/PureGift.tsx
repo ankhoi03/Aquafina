@@ -16,6 +16,7 @@ interface Gift {
 
 interface PureGiftProps {
     navigateToGiftScreen?: () => void
+    hiddenButton?: boolean
 }
 
 
@@ -27,7 +28,7 @@ const itemWidth = Math.round(sliderWidth * 0.48);
 
 const _PureGift: React.FC<PureGiftProps> = (props) => {
 
-    const { navigateToGiftScreen } = props
+    const { navigateToGiftScreen, hiddenButton } = props
 
     const GiftList: Gift[] = [
         {
@@ -131,8 +132,11 @@ const _PureGift: React.FC<PureGiftProps> = (props) => {
                         inactiveSlideScale={0.8}
                         inactiveSlideOpacity={1}
                     />
-                    <AquafinaButton content='Khám phá ngay' source={images.blue_button} buttonStyle={styles.button} textStyle={styles.blueContent} onPress={navigateToGiftScreen}/>
-
+                    {
+                        hiddenButton ? null : (
+                            <AquafinaButton content='Khám phá ngay' source={images.blue_button} buttonStyle={styles.button} textStyle={styles.blueContent} onPress={navigateToGiftScreen} />
+                        )
+                    }
                     <Pagination dotsLength={GiftList.length} activeDotIndex={activeIndex} inactiveDotScale={1} dotStyle={{ backgroundColor: colors.blue_dark, marginHorizontal: -10 }} inactiveDotStyle={{ backgroundColor: colors.grey_dark }} />
                     <Modal
                         style={styles.modalContainer}

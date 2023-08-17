@@ -13,10 +13,13 @@ export const colors = {
   white_opacity: '#FFFFFF80',
   red_light: '#FA4238',
   black_dark: '#292B2E',
-  black_light: '#292B2E80',
-
+  black_light: '#292B2E90',
+  orange_point: 'FFB800',
   //ranked item background colors
   top_1_yellow: '#FBD300',
   top_2_purple: '#6F84F5',
   top_3_blue: '#57B7F5',
+
+  //background colors
+  world_bg:'#F0FAFF',
 };

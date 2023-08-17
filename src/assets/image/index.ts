@@ -125,5 +125,37 @@ export const images = {
 
   ic_error: 'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_image%2Fic_error.png?alt=media&token=734cf088-e568-4aaa-92d6-001ab8705701',
 
+  world_banner_1:'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_image%2Fworld_banner_1.png?alt=media&token=d551f8fa-46d6-4e43-91c2-3fdc1ef7e713',
+
+  world_banner_2:'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_image%2Fworld_banner_2.png?alt=media&token=3ae71197-70e8-4be8-8bfd-a040d578e93f',
+
+  world_banner_3:'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_image%2Fworld_banner_3.png?alt=media&token=c1b35e57-bcc0-4a32-9e89-a3c30e6db58e',
+
+  world_banner_4:'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_image%2Fworld_banner_4.png?alt=media&token=a6a28e64-3ae0-4f0d-b880-039d3fa179b9',
+
+  logo_headless:'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_image%2Flogo_headless.png?alt=media&token=6b3b7e49-c2d7-4083-9df3-f35eae056d54',
+
+  logo_repeet:'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_image%2Flogo_repeet.png?alt=media&token=c8898527-a6cb-44ad-9b2a-b5e570bd7d18',
+
+  gift_banner_1:'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_image%2Fgift_banner_1.png?alt=media&token=d91780c5-85af-48e0-a709-2d4200a3932a',
+
+  frame_rule:'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_image%2Frule_frame.png?alt=media&token=6264aaa0-3022-4811-a657-c7a90b63f93e',
+
+  map_banner_1:'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_image%2Fmap_banner_1.png?alt=media&token=56261435-b519-4191-9596-6245037331fd',
+
+  map_banner_2:'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_image%2Fmap_banner_2.png?alt=media&token=d7477134-f082-46e1-9f7b-1cc18beac121',
+
+  logo_partners:'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_image%2Flogo_partners.png?alt=media&token=829b494a-4679-4f3d-a027-a1134a7fc8ec',
+
+  map:'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_image%2Fmap.png?alt=media&token=2196ccab-bdfa-4069-81fc-6a0154354d33',
+
+  point_frame:'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_image%2Fpoint_frame.png?alt=media&token=f87b5108-d755-482d-9920-aa82b4bdffa1',
+
+  ic_camera:'https://firebasestorage.googleapis.com/v0/b/aquafina-27bf7.appspot.com/o/aquafina_image%2Fic_camera.png?alt=media&token=f1837539-0d37-4447-9f10-ecdc24a7f7fc',
+
+  
+
+
+
 
 }

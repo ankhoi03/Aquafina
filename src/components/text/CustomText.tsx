@@ -4,7 +4,7 @@ import { fonts } from '@assets';
 
 interface CustomTextProps {
     style?: StyleProp<TextStyle>
-    children: {bold: boolean, contentStyle?: StyleProp<TextStyle>, content: string,}[]
+    children: {bold: boolean, contentStyle?: StyleProp<TextStyle>, content: string}[]
 }
 const _CustomText: React.FC<CustomTextProps> = (props) => {
     const {children} = props
@@ -15,7 +15,7 @@ const _CustomText: React.FC<CustomTextProps> = (props) => {
                     key={index}
                     style={StyleSheet.flatten([
                         item.bold ? styles.boldText : styles.regularText,
-                        item.contentStyle
+                        item?.contentStyle
                     ])}
                 >
                     {item.content}

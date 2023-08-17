@@ -1,12 +1,13 @@
 import React, { useContext } from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
-import { InputOTP, Login, Home, Register, Success, WorldScreen, GiftScreen, MapScreen, PointScreen, RankScreen } from '@screens';
+import { InputOTP, Login, Home, Register, Success, WorldScreen, GiftScreen, MapScreen, PointScreen, RankScreen, GiftRule } from '@screens';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { CustomDrawer } from '@components';
 import { Image, StyleSheet } from 'react-native';
 import { fonts, images } from '@assets';
 import { colors } from '@utils';
+
 
 
 export type RootAuthParamLists = {
@@ -22,6 +23,11 @@ export type RootMainParamLists = {
   Drawer: undefined
 }
 
+export type RootGiftParamLists = {
+  GiftScreen: undefined
+  Rule: undefined
+}
+
 export type RootDrawerParamLists = {
   'Trang Chủ': undefined
   'Thế Giới Xanh': undefined
@@ -33,11 +39,12 @@ export type RootDrawerParamLists = {
 
 const Auth = createNativeStackNavigator<RootAuthParamLists>()
 const Main = createNativeStackNavigator<RootMainParamLists>()
+const Gift = createNativeStackNavigator<RootGiftParamLists>()
 const Drawer = createDrawerNavigator<RootDrawerParamLists>()
 
 const DrawerNavigation: React.FC = () => {
   return (
-    <Drawer.Navigator drawerContent={props => <CustomDrawer {...props} />}     initialRouteName='Trang Chủ'
+    <Drawer.Navigator drawerContent={props => <CustomDrawer {...props} />} initialRouteName='Trang Chủ'
       screenOptions={({ route }) => ({
         headerShown: false,
         drawerIcon: ({ focused, color, size }) => {
@@ -77,7 +84,7 @@ const DrawerNavigation: React.FC = () => {
         drawerItemStyle: { display: "none" },
       }} />
       <Drawer.Screen name="Thế Giới Xanh" component={WorldScreen} />
-      <Drawer.Screen name="Quà Tặng Xanh" component={GiftScreen} />
+      <Drawer.Screen name="Quà Tặng Xanh" component={GiftComponent} />
       <Drawer.Screen name="Bản Đồ Xanh" component={MapScreen} />
       <Drawer.Screen name="Điểm Thưởng Xanh" component={PointScreen} />
       <Drawer.Screen name="Bảng Xếp Hạng" component={RankScreen} />
@@ -101,6 +108,15 @@ const MainNavigation: React.FC = () => {
       <Main.Screen name='Drawer' component={DrawerNavigation} />
       <Main.Screen name='Auth' component={AuthNavigation} />
     </Main.Navigator>
+  )
+}
+
+const GiftComponent: React.FC = () => {
+  return (
+    <Gift.Navigator screenOptions={{ headerShown: false }}>
+      <Gift.Screen name='GiftScreen' component={GiftScreen as React.FC<any>} />
+      <Gift.Screen name='Rule' component={GiftRule as React.FC<any>} />
+    </Gift.Navigator>
   )
 }
 
