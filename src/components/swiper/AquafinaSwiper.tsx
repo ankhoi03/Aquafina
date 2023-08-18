@@ -5,26 +5,30 @@ import { colors, displaySize } from '@utils';
 import { images } from '@assets';
 import { AquafinaButton } from '@components';
 
-
-const _AquafinaSwiper = () => {
+interface SwiperProps {
+  navigateToRule?: () => void
+  navigateToGreenWorld?: () => void
+}
+const _AquafinaSwiper:React.FC<SwiperProps> = (props) => {
+  const { navigateToRule, navigateToGreenWorld } = props
   return (
     <View style={styles.container}>
       <Swiper showsButtons={false} autoplay>
 
         <ImageBackground style={styles.slide} source={{ uri: images.slide_1 }}>
-          <AquafinaButton content='Tìm hiểu thêm' source={images.blue_button} buttonStyle={styles.button} textStyle={styles.blueContent} />
+          <AquafinaButton content='Tìm hiểu thêm' source={images.blue_button} buttonStyle={styles.button} textStyle={styles.blueContent} onPress={navigateToGreenWorld}/>
         </ImageBackground>
 
         <ImageBackground style={styles.slide} source={{ uri: images.slide_2 }}>
-          <AquafinaButton content='Tìm hiểu thêm' source={images.blue_button} buttonStyle={styles.button} textStyle={styles.blueContent} />
+          <AquafinaButton content='Tìm hiểu thêm' source={images.blue_button} buttonStyle={styles.button} textStyle={styles.blueContent} onPress={navigateToGreenWorld}/>
         </ImageBackground>
 
         <ImageBackground style={styles.slide} source={{ uri: images.slide_3 }}>
-          <AquafinaButton content='Tìm hiểu thêm' source={images.blue_button} buttonStyle={styles.button} textStyle={styles.blueContent} />
+          <AquafinaButton content='Tìm hiểu thêm' source={images.blue_button} buttonStyle={styles.button} textStyle={styles.blueContent} onPress={navigateToGreenWorld}/>
         </ImageBackground>
 
         <ImageBackground style={styles.slide} source={{ uri: images.slide_4 }}>
-          <AquafinaButton content='Tìm hiểu thêm' source={images.blue_button} buttonStyle={styles.button} textStyle={styles.blueContent} />
+          <AquafinaButton content='Tìm hiểu thêm' source={images.blue_button} buttonStyle={styles.button} textStyle={styles.blueContent} onPress={navigateToRule}/>
         </ImageBackground>
 
       </Swiper>

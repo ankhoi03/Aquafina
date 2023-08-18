@@ -3,11 +3,11 @@ import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { AquafinaRanked, AquafinaSwiper, Footer, Header, PureGift, PureMap } from '@components'
 import { NativeStackScreenProps } from '@react-navigation/native-stack'
-import { RootDrawerParamLists, RootMainParamLists } from '@navigation'
+import { RootDrawerParamLists, RootGiftParamLists, RootMainParamLists } from '@navigation'
 import { DrawerActions } from '@react-navigation/native';
 import { DrawerScreenProps } from '@react-navigation/drawer'
 
-type HomeProps = NativeStackScreenProps<RootMainParamLists> & DrawerScreenProps<RootDrawerParamLists>;
+type HomeProps = NativeStackScreenProps<RootMainParamLists> & DrawerScreenProps<RootDrawerParamLists>& NativeStackScreenProps<RootGiftParamLists>
 const _Home: React.FC<HomeProps> = (props) => {
 
   const { navigation } = props;
@@ -30,6 +30,10 @@ const _Home: React.FC<HomeProps> = (props) => {
   const handleNavgateToRankedScreen = () => {
     navigation.navigate('Bảng Xếp Hạng');
   }
+
+  const handleNavgateToRule = () => {
+    navigation.navigate('Rule');
+  }
   const handleOpenDrawer = () => {
     navigation.dispatch(DrawerActions.openDrawer());
   }
@@ -42,7 +46,7 @@ const _Home: React.FC<HomeProps> = (props) => {
   const _renderBody = () => {
     return (
       <ScrollView>
-        <AquafinaSwiper />
+        <AquafinaSwiper navigateToGreenWorld={handleNavgateToWorldScreen} navigateToRule={handleNavgateToRule}/>
 
         <AquafinaRanked navigateToLogin={handleNavgateToLogin} navigateToRankedScreen={handleNavgateToRankedScreen} />
 

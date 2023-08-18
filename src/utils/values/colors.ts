@@ -14,7 +14,7 @@ export const colors = {
   red_light: '#FA4238',
   black_dark: '#292B2E',
   black_light: '#292B2E90',
-  orange_point: 'FFB800',
+  orange_point: '#FFB800',
   //ranked item background colors
   top_1_yellow: '#FBD300',
   top_2_purple: '#6F84F5',

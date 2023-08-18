@@ -20,16 +20,12 @@ const _AquafinaRanked: React.FC<RankedProps> = (props) => {
   const { loginStatus } = useContext(AppContext);
   const date = '13/06/2022 - 19/06/2022'
   interface User {
-    index: number
     avatar: string
-    rank?: string
-    crown?: string
     name: string
     score: number
   }
 
   const CurrentUser: User = {
-    index: 15,
     avatar: images.khoita,
     name: 'To An Khoi',
     score: 256
@@ -37,59 +33,55 @@ const _AquafinaRanked: React.FC<RankedProps> = (props) => {
 
   const TopUser: User[] = [
     {
-      index: 1,
       avatar: images.ic_face_1,
-      rank: images.ic_top_1,
-      crown: images.ic_crown_1,
       name: "Sophie Dubois",
       score: 1000,
     },
     {
-      index: 2,
       avatar: images.ic_face_2,
-      rank: images.ic_top_2,
-      crown: images.ic_crown_2,
       name: "Isabella Rossi",
       score: 989,
     },
     {
-      index: 3,
       avatar: images.ic_face_3,
-      rank: images.ic_top_3,
-      crown: images.ic_crown_3,
       name: "Leila Ahmed",
       score: 686,
     },
     {
-      index: 4,
       avatar: images.ic_face_4,
-      rank: images.ic_top_4,
       name: "Natalia Petrovich",
       score: 404,
     },
     {
-      index: 5,
       avatar: images.ic_face_5,
-      rank: images.ic_top_5,
       name: "Elena Rodriguez",
       score: 310,
     },
   ];
 
-  const TopUserItem: React.FC<{ item: User }> = ({ item }) => {
-    const inTop = item.index <= 3
-    let backgroundColor;
+  const TopUserItem: React.FC<{ item: User, index: number }> = ({ item, index }) => {
+    const inTop = index < 3
+    let backgroundColor, rank, crown
 
-    switch (item.index) {
-      case 1:
-        backgroundColor = colors.top_1_yellow;
-        break;
-      case 2:
-        backgroundColor = colors.top_2_purple;
-        break;
-      case 3:
-        backgroundColor = colors.top_3_blue;
-        break;
+    switch (index) {
+      case 0: {
+        backgroundColor = colors.top_1_yellow
+        rank = images.ic_top_1
+        crown = images.ic_crown_1
+        break
+      }
+      case 1: {
+        backgroundColor = colors.top_2_purple
+        rank = images.ic_top_2
+        crown = images.ic_crown_2
+        break
+      }
+      case 2: {
+        backgroundColor = colors.top_3_blue
+        rank = images.ic_top_3
+        crown = images.ic_crown_3
+        break
+      }
       default:
         backgroundColor = colors.white;
         break;
@@ -98,11 +90,11 @@ const _AquafinaRanked: React.FC<RankedProps> = (props) => {
       <>
         {inTop ? (
           <View style={[styles.topUserItem, { backgroundColor }]}>
-            <Image source={{ uri: item?.rank }} style={styles.rankImage} />
+            <Image source={{ uri: rank }} style={styles.rankImage} />
             <View style={styles.infoUserView}>
               <Image source={{ uri: item?.avatar }} style={styles.avatarImage} />
               <RegularText content={item?.name} style={[styles.name, { color: colors.white }]} />
-              <Image source={{ uri: item?.crown }} style={styles.crownImage} />
+              <Image source={{ uri: crown }} style={styles.crownImage} />
             </View>
             <View style={styles.scoreView}>
               <RegularText content={item?.score.toString()} style={[styles.score, { color: colors.white }]} />
@@ -111,7 +103,7 @@ const _AquafinaRanked: React.FC<RankedProps> = (props) => {
         ) : (
           <View style={[styles.topUserItem, { backgroundColor }]}>
             <View style={[styles.infoUserView, { width: '80%' }]}>
-              <RegularText content={'#' + item.index} style={[styles.score, { width: 30 }]} />
+              <RegularText content={'#' + (index + 1)} style={[styles.score, { width: 40 }]} />
               <Image source={{ uri: item?.avatar }} style={styles.avatarImage} />
               <RegularText content={item?.name} style={styles.name} />
             </View>
@@ -150,7 +142,7 @@ const _AquafinaRanked: React.FC<RankedProps> = (props) => {
 
         <View style={styles.topUserView}>
           {TopUser.map((item, index) => (
-            <TopUserItem item={item} key={item.index} />
+            <TopUserItem item={item} key={index} index={index} />
           ))}
         </View>
 
@@ -161,7 +153,7 @@ const _AquafinaRanked: React.FC<RankedProps> = (props) => {
             <RegularText content='Hạng của tôi' style={styles.titile} />
             <View style={styles.currentUserItem}>
               <View style={styles.infoUserView}>
-                <RegularText content={'#' + CurrentUser.index} style={[styles.score, { color: colors.white, width: 30 }]} />
+                <RegularText content={'#' + 90} style={[styles.score, { color: colors.white, width: 40 }]} />
                 <Image source={{ uri: CurrentUser.avatar }} style={styles.avatarImage} />
                 <RegularText content={CurrentUser.name} style={[styles.name, { color: colors.white }]} />
               </View>
@@ -170,7 +162,7 @@ const _AquafinaRanked: React.FC<RankedProps> = (props) => {
               </View>
             </View>
 
-            <AquafinaButton content='Xem chi tiết' source={images.white_button} buttonStyle={styles.button} textStyle={styles.whiteContent} onPress={navigateToRankedScreen}/>
+            <AquafinaButton content='Xem chi tiết' source={images.white_button} buttonStyle={styles.button} textStyle={styles.whiteContent} onPress={navigateToRankedScreen} />
           </View>
         ) : (
           <View style={styles.footerNonLogin}>
