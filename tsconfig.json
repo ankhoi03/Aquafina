@@ -4,13 +4,16 @@
     "baseUrl": "./src",
     "paths": {
       "@assets": ["assets"],
+      "@data": ["data"],
       "@components": ["components"],
       "@navigation": ["navigation"],
       "@screens": ["screens"],
       "@utils": ["utils"],
 
+
       
       "@assets/*": ["assets/*"],
+      "@data/*": ["data/*"],
       "@components/*": ["components/*"],
       "@navigation/*": ["navigation/*"],
       "@screens/*": ["screens/*"],

@@ -8,6 +8,7 @@ module.exports = {
         extensions: ['.ts', '.tsx', '.js', '.json'],
         alias: {
           '@assets': './src/assets',
+          '@data': './src/data',
           '@components': './src/components',
           '@navigation': './src/navigation',
           '@screens': './src/screens',

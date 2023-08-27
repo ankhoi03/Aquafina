@@ -1,8 +1,9 @@
 import { Dimensions, Image, ImageStyle, StyleProp, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React, { useContext } from 'react'
 import { colors, displaySize } from '@utils'
-import { AppContext } from '@navigation'
 import { images } from '@assets'
+import { useAppDispatch, useAppSelector } from '@data/store/RootStore'
+import { logout } from '@data'
 
 export interface HeaderProps {
     onPressLogin?: () => void
@@ -10,10 +11,13 @@ export interface HeaderProps {
 }
 
 const _Header: React.FC<HeaderProps> = (props) => {
-    const { loginStatus, setLoginStatus } = useContext(AppContext);
+    const dispatch = useAppDispatch();
+  const authSelector = useAppSelector((state) => state.auth);
+  const loginStatus = authSelector.isLogin;
+  const CurrentUser = authSelector.currentUser;
 
     const handleLogout = () =>{
-        setLoginStatus(false)
+        dispatch(logout());
     }
     
 

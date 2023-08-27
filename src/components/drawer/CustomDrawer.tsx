@@ -5,18 +5,27 @@ import { DrawerActions } from '@react-navigation/native';
 import { fonts, images } from '@assets'
 import { colors } from '@utils';
 import { RegularText } from '@components';
-import { AppContext } from '@navigation'
+import { useAppDispatch, useAppSelector } from '@data/store/RootStore';
+import { logout } from '@data';
 
 
 
 const _CustomDrawer: React.FC<DrawerContentComponentProps> = (props) => {
+
+
+  const dispatch = useAppDispatch();
+  const authSelector = useAppSelector((state) => state.auth);
+  const loginStatus = authSelector.isLogin;
+  const CurrentUser = authSelector.currentUser;
+
+
+
   const { navigation } = props;
-  const { loginStatus, setLoginStatus } = useContext(AppContext);
   const handleCloseDrawer = () => {
     navigation.dispatch(DrawerActions.closeDrawer());
   }
   const handleLogout = () => {
-    setLoginStatus(false)
+    dispatch(logout());
   }
   const handleLogin = () => {
     navigation.navigate('Auth');
@@ -41,8 +50,8 @@ const _CustomDrawer: React.FC<DrawerContentComponentProps> = (props) => {
 
       {loginStatus ? (
         <View style={styles.info}>
-          <Image source={{ uri: images.khoita }} style={styles.avatar} />
-          <RegularText content='To An Khoi' style={styles.name} />
+          <Image source={{ uri: CurrentUser.avatar }} style={styles.avatar} />
+          <RegularText content={CurrentUser.name} style={styles.name} />
         </View>
       ) : (
         <View style={styles.info}>

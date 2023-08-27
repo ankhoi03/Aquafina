@@ -1,5 +1,5 @@
 import { StyleSheet, View, ScrollView, SafeAreaView, ImageBackground, Image, TouchableOpacity, TextInput } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { NativeStackScreenProps } from '@react-navigation/native-stack'
 import { RootDrawerParamLists, RootMainParamLists } from '@navigation'
 import { DrawerActions } from '@react-navigation/native';
@@ -7,10 +7,25 @@ import { DrawerScreenProps } from '@react-navigation/drawer'
 import { CustomText, Footer, Header, RegularText } from '@components';
 import { colors, displaySize } from '@utils';
 import { fonts, images } from '@assets';
+import { useAppDispatch, useAppSelector } from '@data/store/RootStore';
+import { fetchUsers } from '@data/store/ListUsers/UserThunk';
+import { User } from '@data';
 
 
 type RankScreenProps = NativeStackScreenProps<RootMainParamLists> & DrawerScreenProps<RootDrawerParamLists>
 const _RankScreen: React.FC<RankScreenProps> = (props) => {
+
+
+  const dispatch = useAppDispatch();
+  const userSelector = useAppSelector((state) => state.users);
+  const authSelector = useAppSelector((state) => state.auth);
+  useEffect(() => {
+    dispatch(fetchUsers());
+  }, []);
+  const ListUsers = userSelector.users;
+  const CurrentUser = authSelector.currentUser;
+
+
   const { navigation } = props;
   const handleNavgateToLogin = () => {
     navigation.navigate('Auth');
@@ -43,69 +58,10 @@ const _RankScreen: React.FC<RankScreenProps> = (props) => {
 
   const _renderBody = () => {
     const date = '13/06/2022 - 19/06/2022'
-    interface User {
-      avatar: string
-      name: string
-      score: number
-    }
-    const CurrentUser: User = {
-      avatar: images.khoita,
-      name: 'To An Khoi',
-      score: 256
-    }
 
-    const TopUser: User[] = [
-      {
-        avatar: images.ic_face_1,
-        name: "Sophie Dubois",
-        score: 1000,
-      },
-      {
-        avatar: images.ic_face_2,
-        name: "Isabella Rossi",
-        score: 989,
-      },
-      {
-        avatar: images.ic_face_3,
-        name: "Leila Ahmed",
-        score: 686,
-      },
-      {
-        avatar: images.ic_face_4,
-        name: "Natalia Petrovich",
-        score: 404,
-      },
-      {
-        avatar: images.ic_face_5,
-        name: "Elena Rodriguez",
-        score: 310,
-      },
-      {
-        avatar: images.ic_face_3,
-        name: "Leila Ahmed",
-        score: 307,
-      },
-      {
-        avatar: images.ic_face_4,
-        name: "Natalia Petrovich",
-        score: 305,
-      },
-      {
-        avatar: images.ic_face_5,
-        name: "Elena Rodriguez",
-        score: 301,
-      },
-      {
-        avatar: images.ic_face_3,
-        name: "Leila Ahmed",
-        score: 290,
-      },
-      {
-        avatar: images.ic_face_4,
-        name: "Natalia Petrovich",
-        score: 280,
-      }
-    ];
+
+
+
     const TopUserItem: React.FC<{ item: User, index: number }> = ({ item, index }) => {
       const inTop = index < 3
       let backgroundColor, rank, crown
@@ -176,7 +132,7 @@ const _RankScreen: React.FC<RankScreenProps> = (props) => {
           {/* List topuser */}
 
           <View style={styles.topUserView}>
-            {TopUser.map((item, index) => (
+            {ListUsers.slice(0, 10).map((item, index) => (
               <TopUserItem item={item} key={index} index={index} />
             ))}
           </View>

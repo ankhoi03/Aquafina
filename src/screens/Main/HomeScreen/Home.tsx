@@ -1,4 +1,4 @@
-import {  StyleSheet, ScrollView } from 'react-native'
+import { StyleSheet, ScrollView } from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { AquafinaRanked, AquafinaSwiper, Footer, Header, PureGift, PureMap } from '@components'
@@ -7,9 +7,9 @@ import { RootDrawerParamLists, RootGiftParamLists, RootMainParamLists } from '@n
 import { DrawerActions } from '@react-navigation/native';
 import { DrawerScreenProps } from '@react-navigation/drawer'
 
-type HomeProps = NativeStackScreenProps<RootMainParamLists> & DrawerScreenProps<RootDrawerParamLists>& NativeStackScreenProps<RootGiftParamLists>
-const _Home: React.FC<HomeProps> = (props) => {
 
+type HomeProps = NativeStackScreenProps<RootMainParamLists> & DrawerScreenProps<RootDrawerParamLists> & NativeStackScreenProps<RootGiftParamLists>
+const _Home: React.FC<HomeProps> = (props) => {
   const { navigation } = props;
 
   const handleNavgateToLogin = () => {
@@ -44,9 +44,10 @@ const _Home: React.FC<HomeProps> = (props) => {
   }
 
   const _renderBody = () => {
+
     return (
       <ScrollView>
-        <AquafinaSwiper navigateToGreenWorld={handleNavgateToWorldScreen} navigateToRule={handleNavgateToRule}/>
+        <AquafinaSwiper navigateToGreenWorld={handleNavgateToWorldScreen} navigateToRule={handleNavgateToRule} />
 
         <AquafinaRanked navigateToLogin={handleNavgateToLogin} navigateToRankedScreen={handleNavgateToRankedScreen} />
 

@@ -7,10 +7,13 @@ import { DrawerScreenProps } from '@react-navigation/drawer'
 import {  CustomText, Footer, Header, RegularText } from '@components';
 import { colors } from '@utils';
 import { fonts, images } from '@assets';
+import {  useAppSelector } from '@data/store/RootStore';
 
 
 type PointScreenProps = NativeStackScreenProps<RootMainParamLists> & DrawerScreenProps<RootDrawerParamLists>
 const _PointScreen: React.FC<PointScreenProps> = (props) => {
+  const authSelector = useAppSelector((state) => state.auth);
+  const CurrentUser = authSelector.currentUser;
   const { navigation } = props;
   const handleNavgateToLogin = () => {
     navigation.navigate('Auth');
@@ -54,7 +57,7 @@ const _PointScreen: React.FC<PointScreenProps> = (props) => {
 
         <View style={styles.avararContainer}>
 
-          <Image source={{ uri: images.khoita }} style={styles.avarar} />
+          <Image source={{ uri: CurrentUser.avatar }} style={styles.avarar} />
 
           <TouchableOpacity>
             <Image source={{ uri: images.ic_camera }} style={styles.icon_camera} />
@@ -64,17 +67,17 @@ const _PointScreen: React.FC<PointScreenProps> = (props) => {
 
         <View style={styles.infoContainer}>
           <RegularText content='Họ và tên' style={styles.subTitle} />
-          <TextInput style={styles.input} value='To An Khoi' editable={false} />
+          <TextInput style={styles.input} value={CurrentUser.name} editable={false} />
         </View>
 
         <View style={styles.infoContainer}>
           <RegularText content='Số điện thoại' style={styles.subTitle} />
-          <TextInput style={styles.input} value='0338265040' editable={false} />
+          <TextInput style={styles.input} value={CurrentUser.phone} editable={false} />
         </View>
 
         <ImageBackground source={{ uri: images.point_frame }} style={styles.frame}>
           <RegularText content='Số điểm tích lũy:' style={[styles.title, { marginVertical: -10, right: 10, marginTop: 50 }]} />
-          <RegularText content='1000' style={styles.point} />
+          <RegularText content={CurrentUser.score.toString()} style={styles.point} />
         </ImageBackground>
 
         <CustomText style={styles.thank}>{thank}</CustomText>

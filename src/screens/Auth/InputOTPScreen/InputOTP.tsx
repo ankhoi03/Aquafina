@@ -1,19 +1,23 @@
 import { ImageBackground, StyleSheet, View, Image, TouchableOpacity, ToastAndroid } from 'react-native'
-import React, { useState, useContext } from 'react'
+import React, { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { images,fonts } from '@assets'
+import { images, fonts } from '@assets'
 import { colors, displaySize } from '@utils'
 import { AquafinaButton, CustomText, Header, LoginHeader, RegularText } from '@components'
 import LinearGradient from 'react-native-linear-gradient'
 import OTPInputView from '@twotalltotems/react-native-otp-input'
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { RootAuthParamLists, AppContext } from '@navigation'
+import { RootAuthParamLists} from '@navigation'
+import { useAppDispatch, useAppSelector } from '@data/store/RootStore'
+import { performLogin } from '@data/store/Auth/AuthThunk'
 
 type InputOTPProps = NativeStackScreenProps<RootAuthParamLists, 'InputOTP'>
 
 const _inputOTP: React.FC<InputOTPProps> = (props) => {
-    const { loginStatus, setLoginStatus } = useContext(AppContext);
     const { navigation, route } = props;
+
+    const dispatch = useAppDispatch();
+    const selector = useAppSelector((state) => state.auth);
 
     const handleNavgateHome = () => {
         navigation.navigate('Main');
@@ -36,7 +40,7 @@ const _inputOTP: React.FC<InputOTPProps> = (props) => {
 
     const codeOTP = "9999";
     const [code, setCode] = useState<string>("");
-    const handleCheckOTP = () => {
+    const handleCheckOTP =async () => {
         if (code != codeOTP) {
             setDisplay("none");
             setColorOTP(colors.red_light);
@@ -44,8 +48,10 @@ const _inputOTP: React.FC<InputOTPProps> = (props) => {
             return false;
         } else {
             if (type) {
-                setLoginStatus(true)
-                handleNavgateHome()
+               await dispatch(performLogin({ phone: phoneNumber, password: code }));
+                if (selector.isLogin === true) {
+                    handleNavgateHome()
+                }
             } else {
                 navigation.navigate('Success');
             }
@@ -68,7 +74,7 @@ const _inputOTP: React.FC<InputOTPProps> = (props) => {
 
     const _renderHeader = () => {
         return (
-          <LoginHeader/>
+            <LoginHeader />
         )
     }
     const _renderBody = () => {
@@ -93,11 +99,6 @@ const _inputOTP: React.FC<InputOTPProps> = (props) => {
                         onCodeChanged={(code) => {
                             setCode(code);
                         }}
-                        onCodeFilled={(code) => {
-                            console.log(`Code is ${code}, you are good to go!`);
-                            setCode(code);
-                        }}
-                        
                     />
                 </View>
             </View>

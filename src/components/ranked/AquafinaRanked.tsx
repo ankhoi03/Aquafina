@@ -1,9 +1,11 @@
 import { Image, ImageBackground, StyleSheet, Text, View } from 'react-native'
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { colors, displaySize } from '@utils';
 import { fonts, images } from '@assets';
 import { RegularText, AquafinaButton } from '@components';
-import { AppContext } from '@navigation'
+import { useAppDispatch, useAppSelector } from '@data/store/RootStore';
+import { fetchUsers } from '@data/store/ListUsers/UserThunk';
+import { User } from '@data';
 
 
 
@@ -17,47 +19,22 @@ const _AquafinaRanked: React.FC<RankedProps> = (props) => {
 
   const aquafinaBottles = 200000
   const anotherBottles = 100000
-  const { loginStatus } = useContext(AppContext);
+
+
+  const dispatch = useAppDispatch();
+  const userSelector = useAppSelector((state) => state.users);
+  const authSelector = useAppSelector((state) => state.auth);
+  useEffect(() => {
+    dispatch(fetchUsers());
+  }, []);
+  const ListUsers = userSelector.users;
+  const CurrentUser= authSelector.currentUser
+  const loginStatus = authSelector.isLogin
+
   const date = '13/06/2022 - 19/06/2022'
-  interface User {
-    avatar: string
-    name: string
-    score: number
-  }
 
-  const CurrentUser: User = {
-    avatar: images.khoita,
-    name: 'To An Khoi',
-    score: 256
-  }
 
-  const TopUser: User[] = [
-    {
-      avatar: images.ic_face_1,
-      name: "Sophie Dubois",
-      score: 1000,
-    },
-    {
-      avatar: images.ic_face_2,
-      name: "Isabella Rossi",
-      score: 989,
-    },
-    {
-      avatar: images.ic_face_3,
-      name: "Leila Ahmed",
-      score: 686,
-    },
-    {
-      avatar: images.ic_face_4,
-      name: "Natalia Petrovich",
-      score: 404,
-    },
-    {
-      avatar: images.ic_face_5,
-      name: "Elena Rodriguez",
-      score: 310,
-    },
-  ];
+
 
   const TopUserItem: React.FC<{ item: User, index: number }> = ({ item, index }) => {
     const inTop = index < 3
@@ -141,7 +118,7 @@ const _AquafinaRanked: React.FC<RankedProps> = (props) => {
         {/* List topuser */}
 
         <View style={styles.topUserView}>
-          {TopUser.map((item, index) => (
+          {ListUsers.slice(0, 5).map((item, index) => (
             <TopUserItem item={item} key={index} index={index} />
           ))}
         </View>
